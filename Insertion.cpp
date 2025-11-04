@@ -28,7 +28,36 @@ void traversel(Node* head)
     cout<<"\n";
 }
 
-void insertion
+void insertion(Node* head,int data,int pos)
+{
+    Node* newNode=new Node(data);
+
+    if(pos==1)
+    {
+        newNode->next=head;
+        head=newNode;
+        return;
+    }
+
+    Node* temp=head;
+    int count=1;
+
+    while(temp!=nullptr && count<pos-1)
+    {
+        temp=temp->next;
+        count++;
+    }
+
+    if(temp==nullptr)
+    {
+        cout<<"Invalid position\n";
+        delete newNode;
+        return ;
+    }
+
+    newNode->next=temp->next;
+    temp->next=newNode;
+}
 
 int main()
 {
@@ -57,7 +86,18 @@ int main()
 
     }
 
-    cout<<"Linked Lists:";
+    cout<<"Linked Lists Before Insertion:";
+    traversel(head);
+
+    int val,pos;
+    cout<<"Which number do you insert:";
+    cin>>val;
+    cout<<"Which position do you insert:";
+    cin>>pos;
+
+    insertion(head,val,pos);
+
+    cout<<"After Insertion:";
     traversel(head);
 
     return 0;
