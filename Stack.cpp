@@ -50,6 +50,26 @@ public:
         }
         return arr[top];
     }
+
+    //Display
+
+    void display()
+    {
+        if(top==-1)
+        {
+            cout<<"Stack is Empty\n";
+            return;
+        }
+
+        cout<<"Stack (bottom to top):[";
+        for (int i = 0; i <= top; i++)
+        {
+            cout << arr[i];
+            if (i != top) cout << ", ";
+        }
+        cout << "]\n";
+
+    }
 };
 
 
@@ -61,6 +81,17 @@ int main()
     st.push(3);
     st.push(4);
     st.push(5);
+
+    st.display();
+
+    st.pop();
+    st.display();
+    
+    st.push(100);
+    st.display();
+
+    st.push(59);
+    st.display();
     //backtrack
 
     // for(int i=0;i<5;i++)
@@ -72,18 +103,18 @@ int main()
     
     
     
-    Stack st2(5);
-    for(int i=0;i<5;i++)
-    {
-        st2.push(st.peek());
-        st.pop();
-    }
+    // Stack st2(5);
+    // for(int i=0;i<5;i++)
+    // {
+    //     st2.push(st.peek());
+    //     st.pop();
+    // }
     
-    for(int i=0;i<5;i++)
-    {
-        cout<<st2.peek()<<" ";
-        st2.pop();
-    }
+    // for(int i=0;i<5;i++)
+    // {
+    //     cout<<st2.peek()<<" ";
+    //     st2.pop();
+    // }
 
 
     return 0;
