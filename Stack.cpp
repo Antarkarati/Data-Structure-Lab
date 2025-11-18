@@ -53,7 +53,7 @@ public:
 
     //Display
 
-    void display()
+    void display()// /ll
     {
         if(top==-1)
         {
@@ -61,11 +61,11 @@ public:
             return;
         }
 
-        cout<<"Stack (bottom to top):[";
-        for (int i = 0; i <= top; i++)
+        cout<<"Stack (top to bottom ):[";
+        for (int i = top; i >= 0; i--)
         {
             cout << arr[i];
-            if (i != top) cout << ", ";
+            if (i != 0) cout << ", ";
         }
         cout << "]\n";
 
